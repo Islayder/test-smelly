@@ -78,8 +78,12 @@ regras. Essa adaptação foi autorizada no pedido da atividade.
 O diagnóstico original foi reproduzido com:
 
 ```sh
-npx eslint test/userService.smelly.test.js
+npx.cmd eslint test/userService.smelly.test.js
 ```
+
+No PowerShell, `npx.cmd` executa a mesma ferramenta sem carregar `npx.ps1`;
+nenhuma política de execução do Windows foi alterada. A coleta e as
+validações também podem usar `npm.cmd`, pelo mesmo motivo.
 
 `eslint-inicial.txt` contém essa saída real. O prefixo privado do diretório
 foi omitido e os logs tiveram apenas espaços finais e linhas vazias

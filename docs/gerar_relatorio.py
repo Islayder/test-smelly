@@ -70,7 +70,7 @@ styles.add(ParagraphStyle(
 def render_lint_evidence():
     """Representa o log real como imagem; não simula uma captura histórica."""
     log = (ROOT / 'eslint-inicial.txt').read_text(encoding='utf-8').strip()
-    command = '$ npx eslint test/userService.smelly.test.js'
+    command = '$ npx.cmd eslint test/userService.smelly.test.js'
     lines = [command, '', *log.splitlines()]
     font = ImageFont.truetype(str(FONT_DIR / 'consola.ttf'), 24)
     symbol_font = ImageFont.truetype(str(FONT_DIR / 'seguisym.ttf'), 24)

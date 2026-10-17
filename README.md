@@ -10,6 +10,9 @@ e verifica comportamentos públicos.
 
 Ambiente validado: Node.js 24.19.0 e npm 11.17.0.
 
+No PowerShell com scripts desabilitados, use `npm.cmd` e `npx.cmd` nos
+comandos abaixo, sem alterar a política de execução do Windows.
+
 ```sh
 npm install
 npm test

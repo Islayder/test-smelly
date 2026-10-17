@@ -148,8 +148,8 @@ a versão 8.57.1 foi fixada para atender ao modelo solicitado, sem silenciar reg
 
 ![Figura 1 — Reprodução visual da saída real do ESLint sobre a suíte original preservada.](eslint-inicial.png)
 
-A figura representa a saída textual registrada integralmente. O diagnóstico
-inicial pôde ser reproduzido porque o arquivo original permaneceu intacto.
+A figura reproduz a saída real de `npx.cmd eslint test/userService.smelly.test.js`.
+O diagnóstico inicial pôde ser reproduzido porque o original permaneceu intacto.
 A imagem foi renderizada a partir do log; não constitui captura histórica
 da primeira execução. O caminho do arquivo é apresentado relativamente à raiz
 do projeto.
