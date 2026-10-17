@@ -38,12 +38,11 @@ Para medir somente a cobertura da suíte limpa:
 npm run coverage -- --runInBand --runTestsByPath __tests__/userService.clean.test.js --coverageReporters=text --coverageReporters=json-summary
 ```
 
-Para regenerar o PDF e a reprodução visual do log em Windows com Python 3:
+Para regenerar o relatório em Windows com Python 3:
 
 ```sh
 python -m pip install reportlab
 python docs/gerar_relatorio.py
 ```
 
-A imagem representa fielmente o log registrado; não é uma captura histórica
-da primeira execução. [Fork de entrega](https://github.com/Islayder/test-smelly).
+[Fork de entrega](https://github.com/Islayder/test-smelly).

@@ -75,7 +75,7 @@ em `eslint-primeira-tentativa.txt`. Fixou-se ESLint 8.57.1, compatível com o
 plugin instalado, para consumir exatamente `.eslintrc.json`, sem desligar
 regras. Essa adaptação foi autorizada no pedido da atividade.
 
-O diagnóstico original foi reproduzido com:
+O ESLint foi executado sobre a suíte original com:
 
 ```sh
 npx.cmd eslint test/userService.smelly.test.js
@@ -85,13 +85,11 @@ No PowerShell, `npx.cmd` executa a mesma ferramenta sem carregar `npx.ps1`;
 nenhuma política de execução do Windows foi alterada. A coleta e as
 validações também podem usar `npm.cmd`, pelo mesmo motivo.
 
-`eslint-inicial.txt` contém essa saída real. O prefixo privado do diretório
-foi omitido e os logs tiveram apenas espaços finais e linhas vazias
-excedentes normalizados, mantendo caminho relativo, posições, mensagens,
-regras e totais. O diagnóstico é o mesmo da análise anterior à refatoração, pois o
-original não mudou. `eslint-inicial.png` é uma reprodução visual fiel desse
-log e inclui o comando; não é uma captura histórica de tela. A imagem está
-incorporada à seção 3 do relatório, com essa distinção explícita.
+`eslint-inicial.txt` registra o diagnóstico, com posições, mensagens, regras
+e totais. A Figura 1, em `eslint-inicial.png`, apresenta o resultado dessa
+execução e está incluída na seção 3 do relatório: quatro erros de
+jest/no-conditional-expect e dois avisos das regras jest/no-disabled-tests
+e jest/expect-expect.
 
 ## Smells confirmados
 
@@ -161,9 +159,8 @@ As alterações abrangem dependências e lockfile, `.eslintrc.json`,
 `.gitignore`, README, suíte limpa e documentação em `docs/`. `.gitattributes`
 declara PDF e PNG como binários para preservar seus bytes no Git. O relatório
 final tem **4 páginas: 1 capa e 3 de conteúdo**, com nome e matrícula
-conferidos. Todas as páginas foram inspecionadas após renderização, incluindo
-a imagem do ESLint. O gerador `gerar_relatorio.py` reproduz a imagem a partir
-do log e recompõe o PDF a partir do Markdown.
+conferidos. Todas as páginas foram inspecionadas, incluindo a legibilidade
+da Figura 1. O script `gerar_relatorio.py` permite atualizar o relatório PDF.
 
 Arquivos temporários, prévias, caches e documentos internos de revisão não
 integram a entrega. node_modules e coverage são ignorados pelo Git. Não há

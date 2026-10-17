@@ -146,20 +146,19 @@ jest/no-conditional-expect (error) e jest/no-identical-title (error).
 A primeira tentativa com ESLint 10.13.0 exigiu outro formato de configuração;
 a versão 8.57.1 foi fixada para atender ao modelo solicitado, sem silenciar regras.
 
-![Figura 1 — Reprodução visual da saída real do ESLint sobre a suíte original preservada.](eslint-inicial.png)
+![Figura 1 — Resultado da execução do ESLint sobre a suíte de testes original.](eslint-inicial.png)
 
-A figura reproduz a saída real de `npx.cmd eslint test/userService.smelly.test.js`.
-O diagnóstico inicial pôde ser reproduzido porque o original permaneceu intacto.
-A imagem foi renderizada a partir do log; não constitui captura histórica
-da primeira execução. O caminho do arquivo é apresentado relativamente à raiz
-do projeto.
+A Figura 1 apresenta o resultado da execução do ESLint sobre a suíte de testes
+original. Foram identificados quatro erros relacionados à regra
+jest/no-conditional-expect e dois avisos, associados às regras
+jest/no-disabled-tests e jest/expect-expect.
 
-Foram encontrados 4 erros de jest/no-conditional-expect: três nos ramos da
-desativação e um no catch. Os 2 avisos correspondem ao teste ignorado
-(jest/no-disabled-tests) e à ausência de assertivas nesse caso
-(jest/expect-expect, do preset recomendado). Não houve títulos idênticos.
-O linter localizou expectativas condicionais e o teste ignorado; Eager Test
-e o acoplamento ao layout exigiram análise manual.
+Os erros indicam expectativas condicionais: três nos ramos da desativação e
+uma no catch, que pode deixar o teste sem validação quando não ocorre exceção.
+Os avisos apontam o teste ignorado e a ausência de assertivas nesse caso.
+Não houve títulos idênticos. O ESLint detectou esses problemas estruturais;
+a identificação do Eager Test e do acoplamento à formatação do relatório
+exigiu análise manual.
 
 Na validação final, npm test aprovou 2 suítes e 21 testes, sem falhas;
 o único skip pertence ao original preservado. O clean retornou 0 erros e

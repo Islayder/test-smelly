@@ -68,7 +68,7 @@ styles.add(ParagraphStyle(
 
 
 def render_lint_evidence():
-    """Representa o log real como imagem; não simula uma captura histórica."""
+    """Prepara a figura com o diagnóstico do ESLint."""
     log = (ROOT / 'eslint-inicial.txt').read_text(encoding='utf-8').strip()
     command = '$ npx.cmd eslint test/userService.smelly.test.js'
     lines = [command, '', *log.splitlines()]
