@@ -1,0 +1,17 @@
+
+> test-smells-lab@1.0.0 test
+> jest
+
+PASS test/userService.smelly.test.js
+  UserService - Suíte de Testes com Smells
+    √ deve criar e buscar um usuário corretamente (3 ms)
+    √ deve desativar usuários se eles não forem administradores (1 ms)
+    √ deve gerar um relatório de usuários formatado (1 ms)
+    √ deve falhar ao criar usuário menor de idade
+    ○ skipped deve retornar uma lista vazia quando não há usuários
+
+Test Suites: 1 passed, 1 total
+Tests:       1 skipped, 4 passed, 5 total
+Snapshots:   0 total
+Time:        0.543 s
+Ran all test suites.

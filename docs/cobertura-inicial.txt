@@ -1,0 +1,23 @@
+
+> test-smells-lab@1.0.0 coverage
+> jest --coverage --runInBand --coverageReporters=text --coverageReporters=json-summary
+
+PASS test/userService.smelly.test.js
+  UserService - Suíte de Testes com Smells
+    √ deve criar e buscar um usuário corretamente (3 ms)
+    √ deve desativar usuários se eles não forem administradores
+    √ deve gerar um relatório de usuários formatado (1 ms)
+    √ deve falhar ao criar usuário menor de idade
+    ○ skipped deve retornar uma lista vazia quando não há usuários
+
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------|---------|----------|---------|---------|-------------------
+All files       |   85.71 |       75 |     100 |   85.71 |
+ userService.js |   85.71 |       75 |     100 |   85.71 | 12,41,57-58
+----------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       1 skipped, 4 passed, 5 total
+Snapshots:   0 total
+Time:        0.548 s, estimated 1 s
+Ran all test suites.

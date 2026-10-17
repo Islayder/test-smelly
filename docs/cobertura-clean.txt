@@ -1,0 +1,39 @@
+
+> test-smells-lab@1.0.0 coverage
+> jest --coverage --runInBand --runTestsByPath __tests__/userService.clean.test.js --coverageReporters=text --coverageReporters=json-summary
+
+PASS __tests__/userService.clean.test.js
+  UserService - comportamentos públicos
+    createUser
+      √ cria um usuário comum ativo com os dados informados (4 ms)
+      √ cria um administrador quando solicitado
+      √ aceita um usuário com exatamente 18 anos
+      √ rejeita um usuário menor de idade com a mensagem esperada (13 ms)
+      √ rejeita a criação sem nome (1 ms)
+      √ rejeita a criação sem email (1 ms)
+      √ rejeita a criação sem idade (1 ms)
+    getUserById
+      √ busca pelo ID e retorna os dados do usuário cadastrado
+      √ retorna null para um ID não cadastrado
+    deactivateUser
+      √ desativa um usuário comum e mantém seu cadastro consultável (1 ms)
+      √ recusa desativar um administrador e mantém seu status ativo (1 ms)
+      √ retorna false ao tentar desativar um ID não cadastrado
+    generateUserReport
+      √ identifica o relatório de usuários pelo título inicial
+      √ informa ID, nome e status de um usuário cadastrado
+      √ inclui todos os usuários cadastrados no relatório (1 ms)
+      √ informa o status inativo de um usuário desativado (1 ms)
+      √ informa a ausência de usuários quando não há cadastros
+
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------|---------|----------|---------|---------|-------------------
+All files       |     100 |      100 |     100 |     100 |
+ userService.js |     100 |      100 |     100 |     100 |
+----------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 passed, 1 total
+Tests:       17 passed, 17 total
+Snapshots:   0 total
+Time:        0.46 s, estimated 1 s
+Ran all test suites within paths "__tests__/userService.clean.test.js".

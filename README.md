@@ -1,30 +1,46 @@
-# Laboratório de Test Smells - Gerenciador de Usuários
+# Laboratório de Test Smells — Gerenciador de Usuários
 
-Este repositório serve como base para o trabalho prático sobre **Test Smells** na disciplina de Teste de Software. Ele contém uma suíte de testes que, apesar de passar, está repleta de "maus cheiros" (smells) que comprometem sua qualidade, manutenibilidade e eficácia.
+Projeto acadêmico de Teste de Software da PUC Minas. O serviço e a suíte
+original foram preservados; a suíte refatorada separa cenários, aplica AAA
+e verifica comportamentos públicos.
 
-## Contexto do Projeto
+## Trabalho – Refatoração de Testes e Test Smells
 
-Imagine que você foi contratado(a) como Engenheiro(a) de Qualidade de Software em uma equipe que está desenvolvendo um serviço de gerenciamento de usuários (`UserService`).
+**Aluno:** Islayder Jackson Ribeiro de Oliveira — **matrícula:** 859552.
 
-A suíte de testes em `__tests__/userService.smelly.test.js` foi escrita por um desenvolvedor que se concentrou apenas em fazer os testes passarem, sem se preocupar com boas práticas. O resultado é um código de teste frágil, obscuro e difícil de manter.
+Ambiente validado: Node.js 24.19.0 e npm 11.17.0.
 
-Sua missão é analisar, diagnosticar e refatorar essa suíte de testes, transformando-a em um exemplo de código de teste limpo e robusto.
-
-## Sua Missão
-
-Seu trabalho será dividido em três etapas principais:
-
-1.  **Analisar:** Identificar manualmente e com a ajuda de ferramentas de análise estática (ESLint) os diferentes Test Smells presentes no código.
-2.  **Refatorar:** Reescrever os testes em um novo arquivo (`userService.clean.test.js`), corrigindo os problemas encontrados e aplicando as melhores práticas, como o padrão **Arrange, Act, Assert (AAA)**.
-3.  **Validar:** Provar que a refatoração foi bem-sucedida, garantindo que os novos testes passem, estejam livres de avisos do linter e sejam mais claros e eficazes.
-
-## Como Começar (Setup)
-
-Siga os passos abaixo para preparar seu ambiente de trabalho.
-
-**1. Clone o repositório:**
-
-```bash
-git clone [URL_DO_SEU_FORK_DO_REPOSITORIO]
-cd test-smelly
+```sh
+npm install
+npm test
+npx eslint __tests__/userService.clean.test.js
+npx eslint .
 ```
+
+- Suíte limpa: `__tests__/userService.clean.test.js`.
+- Suíte original preservada: `test/userService.smelly.test.js`.
+- [Relatório final em PDF](docs/Relatorio_Test_Smells.pdf).
+- [Fonte do relatório](docs/Relatorio_Test_Smells.md).
+- [Evidência visual do ESLint](docs/eslint-inicial.png).
+- [Resultados e comandos de validação](docs/VALIDACAO.md).
+
+São 21 testes aprovados e 1 skip pertencente ao original. O lint do clean
+retorna zero erros e avisos. O lint completo retorna 4 erros e 2 avisos
+exclusivamente no original, preservado para comparação. ESLint 8.57.1 foi
+fixado para utilizar o formato `.eslintrc.json` exigido no trabalho.
+
+Para medir somente a cobertura da suíte limpa:
+
+```sh
+npm run coverage -- --runInBand --runTestsByPath __tests__/userService.clean.test.js --coverageReporters=text --coverageReporters=json-summary
+```
+
+Para regenerar o PDF e a reprodução visual do log em Windows com Python 3:
+
+```sh
+python -m pip install reportlab
+python docs/gerar_relatorio.py
+```
+
+A imagem representa fielmente o log registrado; não é uma captura histórica
+da primeira execução. [Fork de entrega](https://github.com/Islayder/test-smelly).
